@@ -31,5 +31,24 @@ namespace MyApiWithKey.Controllers
             .ToArray();
         }
 
+        //[HttpPost(Name = "PostWeatherForecast")]
+        //public ActionResult WeatherForecasts(int? temperatureC, int? temperatureF, string? summary, int? part)
+        //{
+        //    var toto = temperatureF;
+
+        //    return Ok();
+
+        //}
+
+        [HttpPost(Name = "PostWeatherForecast")]
+        public ActionResult WeatherForecasts([FromBody] MiniForecast miniForecast)
+        {
+            var toto = miniForecast.TemperatureF;
+
+            return Ok();
+
+        }
+
+
     }
 }
